@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "playful";
+  src: url("/fonts/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "montserrat";
+  src: url("/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+@theme {
+  --color-cocktial-blue: #6fc3df;
+  --color-cocktial-purple: #8D82C4;
+  --color-cocktial-red: #ec8d81;
+  --color-cocktial-orange: #e7b788;
+  --color-cocktial-blue-purple: #8EA9E8;
+  --color-cocktial-green: #87C5A4;
+  --color-my-white: #ffffff;
+  --color-footer-header: #262b46
+}
+
+html {
+font-family: "playful";
+color: #ffffff;
+}
+
+.montserrat {
+  font-family: "montserrat";
+}
+
+.bg-cocktail-blue {
+  background-color: #6fc3df;
+}
+
+.bg-cocktail-red {
+  background-color: #ec8d81;
+}
+
+.bg-cocktail-orange {
+  background-color: #e7b788;
+}
+
+.bg-cocktail-purple {
+  background-color: #8D82C4;
+}
+
+.bg-cocktail-green {
+  background-color: #87C5A4;
+}
+
+.bg-cocktail-blue-purple {
+  background-color: #8EA9E8;
+}
