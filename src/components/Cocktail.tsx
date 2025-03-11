@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { IDrink, mainContext } from "../context/MainProvider";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import CocktailRecipe from "./CocktailRecipe";
+
 
 interface CocktailProps {
   cocktail: IDrink;
@@ -63,7 +63,7 @@ export interface IDrinkDetail {
   dateModified: string | null;
 }
 
-const Cocktail = ({ cocktail, backgroundColor }: CocktailProps) => {
+const Cocktail = ({ cocktail }: CocktailProps) => {
   const [toggleId, setToggleId] = useState<boolean>(false);
 
   const [recipeData, setRecipeData] = useState<IDrinkDetail>({
@@ -120,6 +120,8 @@ const Cocktail = ({ cocktail, backgroundColor }: CocktailProps) => {
     dateModified: "",
   });
 
+  const {backgroundColor} = useContext(mainContext) as any
+
   //kann das noch in eine Funktion, die dann beim Klicken des Buttons aufgerufen wird?
   //was lief beim fetch falsch?
   //unten die ID wird rot markiert (button)
@@ -139,8 +141,6 @@ const Cocktail = ({ cocktail, backgroundColor }: CocktailProps) => {
     }
   };
 
-  //! Hier werden Nummern geloggt
-  console.log(backgroundColor);
   return (
     <>
       <div className={`${backgroundColor} flex px-5 py-10 gap-4 items-center relative`}>
@@ -166,7 +166,7 @@ const Cocktail = ({ cocktail, backgroundColor }: CocktailProps) => {
           >
             <button className="mb-2 text-right" onClick={() => setToggleId(false)}>X</button>
             <h1 className="text-2xl mb-3 text-center">{recipeData.strDrink}</h1>
-            <div className="flex justify-center mb-20">
+            <div className="flex justify-center mb-10">
               <img className="w-1/2" src={recipeData.strDrinkThumb} alt={recipeData.strDrink} />
             </div>
             <article>

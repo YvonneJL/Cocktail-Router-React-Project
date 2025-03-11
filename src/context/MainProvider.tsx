@@ -15,6 +15,7 @@ const MainProvider = ({children}: {children: React.ReactNode}) => {
     // zweiter State, um den fetch Link dynamisch zu gestalten: hier für alkoholfrei/zufällig und alkoholsorte
     const [data, setData] = useState<IDrink[]>([]);
     const [link, setLink] = useState("")
+    const [backgroundColor, setBackgroundColor] = useState<string>("")
 
     // useEffect(()=> {
     //     const fetchData = async () => {
@@ -50,7 +51,7 @@ const MainProvider = ({children}: {children: React.ReactNode}) => {
 
     return ( 
         <>
-        <mainContext.Provider value={{data, setLink, link, setData}}>
+        <mainContext.Provider value={{data, setLink, link, setData, backgroundColor, setBackgroundColor}}>
             {children}
         </mainContext.Provider>
         </>

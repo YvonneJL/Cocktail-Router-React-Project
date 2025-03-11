@@ -9,7 +9,7 @@ import { mainContext } from "./context/MainProvider"
 
 function App() {
 
-   const {data, setData, link, setLink} = useContext(mainContext) as any
+   const {data, setData, link, setLink, backgroundColor, setBackgroundColor} = useContext(mainContext) as any
 
   useEffect(()=> {
     const fetchData = async () => {
@@ -17,16 +17,22 @@ function App() {
         if (link) {
             if (link === "zufall") {
                 url = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
+                setBackgroundColor("bg-cocktail-green")
             } else if (link === "gin") {
                 url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin"
+                setBackgroundColor("bg-cocktail-blue")
             } else if (link === "vodka") {
                 url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka"
+                setBackgroundColor("bg-cocktail-purple")
             } else if (link === "scotch") {
                 url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Scotch"
+                setBackgroundColor("bg-cocktail-orange")
             } else if (link === "rum") {
                 url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Rum"
+                setBackgroundColor("bg-cocktail-red")
             }else if (link === "alkoholfrei") {
                 url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic"
+                setBackgroundColor("bg-cocktail-blue-purple")
             }
             try {
                 const response = await axios.get(url)
