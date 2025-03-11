@@ -5,7 +5,7 @@ const Nav = () => {
         <>
         <nav className="flex justify-between pb-15">
             <h2>DRINKS & CHILL</h2>
-            <button className="montserrat">MENU</button>
+            <Link to="/" className="montserrat">HOME</Link>
         </nav>
         </>
      );

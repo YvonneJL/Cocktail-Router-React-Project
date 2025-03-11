@@ -1,8 +1,10 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IDrink, mainContext } from "../context/MainProvider";
-import Cocktail from "../components/Cocktail";
+import Cocktail, { IDrinkDetail } from "../components/Cocktail";
 import { allAlcCategories } from "../data/data";
+import CocktailRecipe from "../components/CocktailRecipe";
+import axios from "axios";
 
 const CocktailList = () => {
 
@@ -15,6 +17,7 @@ const CocktailList = () => {
     useEffect(()=> {
         setLink(categoryParam)
     }, [categoryParam])
+
 
     return (
     <>
